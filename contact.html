@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="contact.css">
+    <title>WEBSITE</title>
+</head>
+<body>
+    <div class="navbar">
+        <a href="index.html">Back</a>
+        <!-- <a href="#section2">Special</a>
+        <a href="#three">Menu</a>
+        <a href="#section4">About</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="contact.html">Contact</a> -->
+    <h2>Contact Us</h2>
+    <form action="SUBMIT">
+        <div id="form ">
+            <form id="waterform " method="post "></form>
+            <div class="form1 " id="name1 ">
+                <label for="name1 ">First Name*</label>
+                <input type="text " id="name1 " name="name1 " />
+            </div>
+            <div class="form2 " id="name2">
+                <label for="name2 ">Second Name*</label>
+                <input type="text " id="name2 " name="name2 " />
+            </div>
+            <div class="form3 " id="email ">
+                <label for="email ">Your Email*</label>
+                <input type="email " id="email " name="email " />
+            </div>
+            <div class="form4 " id="message ">
+                <label for="message ">Your Message*</label>
+                <textarea id="message " name="message "></textarea>
+            </div>
+            <button>
+            <input type="submit " value="SUBMIT " /></button>
+    </form>
+    </div>
+    <script>
+        $('document').ready(function() {
+            $('input[type="text"], input[type="email"], textarea').focus(function() {
+                var background = $(this).attr('id');
+                $('#' + background + '-form').addClass('form3');
+                $('#' + background + '-form').removeClass('formgroup-error');
+            });
+            $('input[type="text"], input[type="email"], textarea').blur(function() {
+                var background = $(this).attr('id');
+                $('#' + background + '-form').removeClass('form3');
+            });
+            ruth
+            function findTruth(field) {
+                $(field).addClass('form4');
+                console.log(field);
+            }
+            $("#waterform").submit(function() {
+                var stopsubmit = true;
+                if ($('#name1').val() == "") {
+                    findTruth('#name1');
+                    stopsubmit = true;
+                }
+                if ($('#name2').val() == "") {
+                    findTruth('#name2');
+                    stopsubmit = true;
+                }
+                if ($('#email').val() == "") {
+                    findTruth('#email');
+                    stopsubmit = true;
+                }
+                if (stopsubmit) return false;
+            });
+        });
+    </script>
+</body>
+</html>
